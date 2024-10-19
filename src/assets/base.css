@@ -1,0 +1,307 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body,
+html {
+    height: 100%;
+    width: 100%;
+}
+
+:root {
+    --header-bg-main--: rgb(91, 224, 39);
+    --second-main-color--: rgb(91, 224, 39);
+}
+
+/* _________________________COMMON___________________ */
+
+.main-container {
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.heading {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+    border-bottom: 1.5px solid #0000002f;
+    width: 100%;
+}
+
+.heading::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -3%;
+    width: 10%;
+    border-bottom: 1.5px solid rgb(5, 179, 17);
+}
+
+small {
+    font-size: 12px;
+}
+
+span {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* __________________________NAVBAR__________________________ */
+
+.nav-link {
+    font-size: 16px;
+    color: #fff;
+}
+
+.router-link-active.nav-link {
+    color: var(--header-bg-main--) !important;
+}
+
+.nav-link.active {
+    color: var(--header-bg-main--) !important;
+}
+
+.nav-link.focus {
+    color: var(--header-bg-main--) !important;
+}
+
+.nav-link:hover {
+    color: var(--header-bg-main--) !important;
+}
+
+.nav-item {
+    position: relative;
+}
+
+.nav-link.focus {
+    color: var(--main-color--) !important;
+}
+
+#products {
+    position: relative;
+}
+
+.product-dropdown {
+    opacity: -2;
+    position: absolute;
+    background-color: #fff;
+    transform: translateY(-100%);
+    transition: all ease .5s;
+    pointer-events: none;
+    scale: .5;
+    z-index: 99;
+    width: 10rem;
+}
+
+#products:hover .product-dropdown {
+    opacity: 1;
+    transform: translateY(0%);
+    transition: all ease .4s;
+    pointer-events: all;
+    scale: 1;
+}
+
+.dropdown-item {
+    padding: .7rem 3rem .7rem 0;
+    text-transform: uppercase;
+    font-size: 14px;
+    color: #000 !important;
+}
+
+.dropdown-item:hover {
+    color: var(--header-bg-main--) !important;
+}
+
+@media (max-width:992px) {
+    .product-dropdown {
+        opacity: -2;
+        display: none;
+        position: absolute;
+        background-color: #fff;
+        transform: translateY(-100%);
+        transition: all ease .3s;
+        scale: 0;
+    }
+
+    #products:hover .product-dropdown {
+        opacity: 1;
+        display: block;
+        transform: translateY(0%);
+        transform: translateX(50%);
+        transition: all ease .4s;
+        scale: 1;
+    }
+}
+
+li {
+    list-style: none;
+}
+
+.d-link {
+    color: #000;
+    text-decoration: none;
+}
+
+/* __________________________BUTTONS-IN-MAINSLIDER___________________________ */
+
+.btn-link {
+    text-decoration: none;
+    color: #fff;
+}
+
+.btn-link:hover {
+    color: #cbcbcb;
+}
+
+.btn-link-2 {
+    text-decoration: none;
+    color: #000;
+}
+
+.btn-link-2:hover {
+    color: #cbcbcb;
+}
+
+/* ________________________ANIMATE ABOUT AND CONTACT TEXT______________________ */
+
+.char {
+    display: inline-block;
+    transform: translateY(200%);
+    opacity: -1;
+}
+
+.char-2 {
+    display: inline-block;
+    transform: translateY(200%);
+    opacity: -1;
+}
+
+/* ________________________SLIDERS________________________ */
+
+.swiper {
+    width: 100%;
+    height: 100%;
+    transition: all ease-in 5s !important;
+    overflow-x: hidden;
+
+}
+
+.mySwiper {
+    width: 100%;
+    overflow-x: hidden;
+
+}
+
+.swiper-slide:hover {
+    box-shadow: rgba(50, 50, 93, 0.164) 0px 50px 100px -20px, rgba(0, 0, 0, 0.196) 0px 30px 60px -30px, rgba(10, 37, 64, 0.224) 0px -2px 6px 0px inset;
+    transition: all ease-in-out .5s;
+    scale: .93;
+    border-radius: 10px;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    margin: 1.5rem 6rem 1.5rem 0rem;
+    padding: .8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    /* height: 100%; */
+    object-fit: cover;
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+    font-size: 25px !important;
+    background-color: #fff;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    padding: 1rem .5rem;
+    color: #000;
+    border-radius: 4px;
+}
+
+.swiper-button-next:after {
+    transform: translateX(140%);
+    transition: all ease-in-out .4s;
+}
+
+.swiper-button-prev:after {
+    transform: translateX(-140%);
+    transition: all ease-in-out .4s;
+}
+
+.swiper:hover .swiper-button-next:after {
+    transform: translateX(0);
+}
+
+.swiper:hover .swiper-button-prev:after {
+    transform: translateX(0);
+}
+
+/* ___________________________SLIDER-CARD-BUTTONS________________________ */
+
+.quick-view {
+    background-color: var(--header-bg-main--);
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: fit-content;
+    width: 100%;
+    border-radius: 5px;
+    gap: 20px;
+    margin: 10px;
+    opacity: 1;
+    transition: all ease-in-out 0.4s;
+    padding: 0 1rem;
+    cursor: pointer;
+}
+
+.call-action {
+    border: 1px solid var(--header-bg-main--);
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: fit-content;
+    width: 100%;
+    border-radius: 5px;
+    gap: 20px;
+    margin: 10px;
+    opacity: 1;
+    transition: all ease-in-out 0.4s;
+    padding: 0 1rem;
+}
+
+/* _____________________________POPUP__________________________ */
+
+.modal {
+    z-index: 9999;
+    overflow: hidden;
+    background-color: #0000007e;
+}
+
+/* .fade {
+    background-color: #000000b9;
+} */
+
+.quick-view-btn {
+    background-color: transparent;
+    border: none;
+}
+
+.modal-content-l img {
+    object-fit: cover;
+    width: 100%;
+}
